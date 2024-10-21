@@ -6,13 +6,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="imge/x-icon" href="Image/Hot%20Chili%20logo%20design%20template.jpg">
 </head>
-<style>
-    #Dash {
-        display: flex;
-    }
-</style>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-secondary-subtle text-white">
     <div class="container-fluid">
         <a class="navbar-brand"><img src="Image/Hot%20Chili%20logo%20design%20template.jpg" width="60"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,54 +16,53 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <span id="Home" class="nav-link" aria-current="page" href="#">Home</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Customer</a>
+                    <span id="Customer" class="nav-link" href="#">Customer</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Store</a>
+                    <span id="Store" class="nav-link" href="#">Store</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Order</a>
+                    <span id="Order" class="nav-link" href="">Order</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Order History</a>
+                    <span id="Order_history" class="nav-link" href="">Order History</span>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<section>
-<div id="Dash" class="position-absolute top-50 start-50 translate-middle">
-    <div class="card" style="width: 18rem;">
-        <img src="Image/iStock_000022736460_Large.jpg" height="200" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Customer</h5>
-            <h4 class="card-text">Customer Count : 10</h4>
-            <a href="#" class="btn btn-primary">Add New Customer</a>
-        </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-        <img src="Image/store.jpg" height="200" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Store</h5>
-            <h4 class="card-text">Item Count : 10</h4>
-            <a href="#" class="btn btn-primary">Add New Item</a>
-        </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-        <img src="Image/Order-Management-System.jpg" height="200" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Order</h5>
-            <h4 class="card-text">Order Count : 10</h4>
-            <a href="#" class="btn btn-primary">Place Order</a>
+<div  id="Dashboard">
+    <div class="card-body">
+        <h1 class="text-start position-absolute top-10 start-50 translate-middle-x">Dashboard Overview</h1>
+        <div class="d-flex p-2 position-absolute top-50 start-50 translate-middle grid gap-3">
+
+            <div class="card p-3 mb-2 bg-primary text-white p-2 g-col-6" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Customers</h5>
+                    <p class="card-text fs-2" id="customerCount">100</p>
+                </div>
+            </div>
+            <div class="card p-3 mb-2 bg-success text-white p-2 g-col-6" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Items</h5>
+                    <p class="card-text fs-2" id="itemCount">50</p>
+                </div>
+            </div>
+            <div class="card p-3 mb-2 bg-warning text-dark p-2 g-col-6" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Orders</h5>
+                    <p class="card-text fs-2" id="orderCount">150</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-</section>
+
 <!--Create Customer-->
-<div class="card">
+<div class="card" id="Customer_Sec">
     <div class="card-body">
         <div id="customer-section" class="container mt-5">
 
@@ -138,7 +132,7 @@
         </div>
     </div>
 </div>
-<div id="item-section" class="container mt-5">
+<div id="Item_Sec" class="container mt-5">
 
     <!-- Item Form -->
     <div class="card my-4">
@@ -189,7 +183,7 @@
         </table>
     </div>
 </div>
-<main id="Order">
+<main id="Order_Sec">
     <div class="container mt-5">
         <div class="row">
             <!-- Invoice Details -->
@@ -310,7 +304,31 @@
         </div>
     </div>
 </main>
+<!--<div class="mt-5" id="HistoryOfOrder">
+    <table class="table table-striped">
+        <thead class="table-success">
+        <tr>
+            <th>Item ID</th>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>P002</td>
+            <td>Keerisamba 5kg</td>
+            <td>525.00</td>
+            <td>2</td>
+            <td>1050</td>
+        </tr>
+        </tbody>
+    </table>
+</div>-->
 
+
+<script src="POS_JS.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
