@@ -95,7 +95,7 @@
                             <label for="address" class="form-label">Address</label>
                             <textarea class="form-control" id="address" rows="3" placeholder="Enter Address" required></textarea>
                         </div>
-                        <button type="button" class="btn btn-success">Save</button>
+                        <button type="button" class="btn btn-success" id="SaveCustomer">Save</button>
                         <button type="button" class="btn btn-warning">Update</button>
                         <button type="button" class="btn btn-danger">Delete</button>
                     </form>
@@ -108,24 +108,15 @@
                     <thead class="table-dark">
                     <tr>
                         <th>Customer ID</th>
-                        <th>Customer Name</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
                         <th>Address</th>
                         <th>Phone Number</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <td>001</td>
-                        <td>Nipun Prabushitha</td>
-                        <td>Gampaha</td>
-                        <td>+94786054430</td>
-                    </tr>
-                    <tr>
-                        <td>002</td>
-                        <td>Gihan</td>
-                        <td>Wadduwa</td>
-                        <td>+94765747319</td>
-                    </tr>
+                    <tbody id="CustomerTable">
+
                     </tbody>
                 </table>
             </div>
@@ -157,7 +148,7 @@
                     <label for="price" class="form-label">Price</label>
                     <input type="number" class="form-control" id="price" placeholder="Enter Price" required>
                 </div>
-                <button type="button" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-success" id="SaveItem">Save</button>
                 <button type="button" class="btn btn-warning">Update</button>
                 <button type="button" class="btn btn-danger">Delete</button>
             </form>
@@ -172,12 +163,12 @@
             <thead class="table-dark">
             <tr>
                 <th>Item ID</th>
-                <th>Price Name</th>
+                <th>Item Name</th>
                 <th>Quantity</th>
                 <th>Price</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="ItemTable">
 
             </tbody>
         </table>
@@ -332,7 +323,7 @@
     </div>
 </div>
 
-
+<script src="JQuary/jquery-3.7.1.min.js"></script>
 <script src="POS_JS.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
