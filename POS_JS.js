@@ -45,6 +45,7 @@ Order.addEventListener("click", function (){
     Customer_sec.style.display = "none";
     Store_sec.style.display = "none";
     Order_sec.style.display = "block";
+    CustomerSelect();
     OrderHistory.style.display = "none";
 });
 
@@ -138,3 +139,31 @@ const itemTable = () => {
     });
 }
 
+///////////////////////////////////////////////////////
+/*Order Save & Table update*/
+//////////////////////////////////////////////////////
+
+/*Customer Id Selection*/
+
+const CustomerSelect = () => {
+    let CustomerIdDB = [];
+    CustomerIdDB = CustomerDB;
+
+    $("#customer").empty();
+    CustomerIdDB.map(customer => {
+        let option = `<option value="${customer.id}">${customer.id}</option>`;
+        $("#customer").append(option);
+    });
+
+}
+
+$("#customer").on("change", function () {
+    let selectedId = $(this).val(); // Get selected customer ID
+    let selectedCustomer = CustomerIdDB.find(customer => customer.id == selectedId); 
+
+    // Update customer details based on selected ID
+    if (selectedCustomer) {
+        $("#name1").val(selectedCustomer.FirstName + " " + selectedCustomer.LastName); 
+        $("#address1").val(selectedCustomer.CustomerAddress); 
+    }
+});
