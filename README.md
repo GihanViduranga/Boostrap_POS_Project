@@ -18,6 +18,7 @@ JavaScript
 
 Contact
 Author: Gihan Viduranga
+
 Email: gihanvidu123@gmail.com
 
 Enjoy using Boostrap_POS! 🚀
