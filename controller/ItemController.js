@@ -112,3 +112,46 @@ $('#ItemTable').on('click','tr', function () {
     $('#qty').val(item_quantity);
     $('#price').val(item_price);
 });
+
+///////////////////////////////////////////////////////
+/*Item Delete*/
+//////////////////////////////////////////////////////
+
+$('#item_delete_button').on('click', function() {
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: "btn btn-success",
+            cancelButton: "btn btn-danger"
+        },
+        buttonsStyling: false
+    });
+    swalWithBootstrapButtons.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            ItemDB.splice(selected_item_Index, 1);
+            itemTable();
+            clearForm();
+            swalWithBootstrapButtons.fire({
+                title: "Deleted!",
+                text: "Item has been deleted.",
+                icon: "success"
+            });
+        } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire({
+                title: "Cancelled",
+                text: "Your imaginary file is safe :)",
+                icon: "error"
+            });
+        }
+    });
+});
