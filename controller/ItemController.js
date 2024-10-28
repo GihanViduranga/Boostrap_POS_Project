@@ -73,8 +73,9 @@ $('#item_update_button').on('click', function() {
     let Item_price = $('#price').val();
 
     if (selected_item_Index !== undefined && selected_item_Index < ItemDB.length){
+
         let itemData = new ItemModel(
-            ItemDB[selected_item_index].id,
+            ItemDB[selected_item_Index].id,
             Item_name,
             Item_description,
             Item_quantity,
