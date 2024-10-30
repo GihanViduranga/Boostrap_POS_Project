@@ -195,7 +195,6 @@ $("#Customer_delete_button").on("click", function (){
                 icon: "success"
             });
         } else if (
-            /* Read more about handling dismissals below */
             result.dismiss === Swal.DismissReason.cancel
         ) {
             swalWithBootstrapButtons.fire({
@@ -215,23 +214,7 @@ $("#Customer_delete_button").on("click", function (){
 
 
 
-///////////////////////////////////////////////////////
-/*Order Save & Table update*/
-//////////////////////////////////////////////////////
 
-/*Customer Id Selection*/
-
-const CustomerSelect = () => {
-    let CustomerIdDB = [];
-    CustomerIdDB = CustomerDB;
-
-    $("#customer1").empty();
-    CustomerIdDB.map(customer => {
-        let option = `<option value="${customer.id}">${customer.id}</option>`;
-        $("#customer1").append(option);
-    });
-
-}
 
 
 

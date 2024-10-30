@@ -42,7 +42,7 @@ const itemTable = () => {
     $("#ItemTable").empty();
     ItemDB.map((item,index) => {
         let Data = `<tr>
-            <td>${item.id}</td>
+            <td>${item.Itemid}</td>
             <td>${item.itemName}</td>
             <td>${item.itemDescription}</td>
             <td>${item.qty}</td>
@@ -75,7 +75,7 @@ $('#item_update_button').on('click', function() {
     if (selected_item_Index !== undefined && selected_item_Index < ItemDB.length){
 
         let itemData = new ItemModel(
-            ItemDB[selected_item_Index].id,
+            ItemDB[selected_item_Index].Itemid,
             Item_name,
             Item_description,
             Item_quantity,

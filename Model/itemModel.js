@@ -1,18 +1,20 @@
 export default class ItemModel{
-    constructor(id,itemName,itemDescription,qty,price) {
-        this._id = id;
+    constructor(Itemid,itemName,itemDescription,qty,price) {
+        this._Itemid = Itemid;
         this._itemName = itemName;
         this._qty = qty;
         this._itemDescription = itemDescription;
         this._price = price;
+        this._Itemid = Itemid;
     }
 
-    get id() {
-        return this._id;
+
+    get Itemid() {
+        return this._Itemid;
     }
 
-    set id(value) {
-        this._id = value;
+    set Itemid(value) {
+        this._Itemid = value;
     }
 
     get itemName() {
@@ -23,20 +25,20 @@ export default class ItemModel{
         this._itemName = value;
     }
 
-    get qty() {
-        return this._qty;
-    }
-
-    set qty(value) {
-        this._qty = value;
-    }
-
     get itemDescription() {
         return this._itemDescription;
     }
 
     set itemDescription(value) {
         this._itemDescription = value;
+    }
+
+    get qty() {
+        return this._qty;
+    }
+
+    set qty(value) {
+        this._qty = value;
     }
 
     get price() {
