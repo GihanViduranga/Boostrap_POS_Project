@@ -3,6 +3,8 @@ import ItemModel from "../Model/itemModel.js";
 import OrderModel from "../Model/orderModel.js";
 import CustomerModel from "../Model/customerModel.js";
 
+let TableItemId = null;
+let orderTableDb = [];
 /////////////////////////////////////////////////////////////////
 /*Populate Customer in Order CustomerID Selection */
 /////////////////////////////////////////////////////////////////
@@ -29,6 +31,8 @@ function handleCustomerSelection() {
 
     // Find the selected customer from CustomerDB
     const selectedCustomerId = customerSelect.value;
+
+    TableItemId = selectedCustomerId;
 
     const customer = CustomerDB.find(c => {
         return String(c.id) === String(selectedCustomerId);
@@ -122,3 +126,66 @@ $("#Order").on("click",function (){
     populateCustomerDropdown();
     populateItemDropdown();
 });
+
+/////////////////////////////////////////////////////////////////
+/*Add to table */
+/////////////////////////////////////////////////////////////////
+
+const orderTable = () => {
+    const itemId = $('#item').val();
+    const itemName = $('#itemName1').val();
+    const price = $('#price1').val();
+    const qtyOnHand = $('#qty1').val();
+    const orderQty = $('#orderQty').val();
+    const total = price * orderQty;
+
+    const orderItem = {
+        itemId,
+        itemName,
+        price,
+        qtyOnHand,
+        orderQty,
+        total
+    };
+    orderTableDb.push(orderItem);
+
+    $("#OrderTable").empty();
+    orderTableDb.forEach(order => {
+        let orderData = `<tr>
+            <td>${order.itemId}</td>
+            <td>${order.itemName}</td>
+            <td>${order.price}</td>
+            <td>${order.orderQty}</td>
+            <td>${order.total}</td>
+        </tr>`;
+        $("#OrderTable").append(orderData);
+    });
+}
+
+const clearForm = () => {
+    $('#customer1').val('');
+    $('#item').val('');
+    $('#itemName1').val('');
+    $('#qty1').val('');
+    $('#orderQty').val('');
+    $('#price1').val('');
+    $('#name1').val('');
+    $('#address1').val('');
+    $('#Total').val('');
+    $('#date').val('');
+    genarateOrderId();
+}
+
+/////////////////////////////////////////////////////////////////
+/* Add Item  */
+/////////////////////////////////////////////////////////////////
+
+$("#AddItem").on('click', function() {
+    orderTable();
+    clearForm();
+});
+
+/////////////////////////////////////////////////////////////////
+/* Set total */
+/////////////////////////////////////////////////////////////////
+
