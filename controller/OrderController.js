@@ -227,12 +227,9 @@ function calculateTotal() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function getSubTotalValue() {
-    // Extract the number from the text "SubTotal: 123.45"
     let subtotal_Value = parseFloat(document.getElementById("subtotal").textContent) || 0;
     return subtotal_Value;
 }
-
-// Example usage
 
 function calculateCashBalance(){
     const currentSubTotal = getSubTotalValue();
@@ -245,13 +242,11 @@ function calculateCashBalance(){
         let totalAmount = (currentSubTotal - discount);
         let cashBalance = (cash - totalAmount);
 
-        console.log(cashBalance);
-        /*/document.getElementById("balance").value = cashBalance.toFixed(2);/*/
         document.querySelector("h4 > strong").textContent = totalAmount.toFixed(2);
         document.querySelector("h5 > strong").textContent = cashBalance.toFixed(2);
     }
 }
 
-$("#PurchaseItem").on("click", function (){
+$("#ToatalCal").on("click", function (){
     calculateCashBalance();
 });
